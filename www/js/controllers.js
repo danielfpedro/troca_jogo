@@ -56,7 +56,38 @@ angular.module('starter.controllers', [])
         range: 3
     };
 })
-.controller('ResultadoBusca', function($scope, $stateParams) {
+.factory('$nativeSpinner', function($window, $ionicLoading){
+    return {
+        show: function(title, type, theme){
+            if (!$window.plugins) {
+                $ionicLoading.show({template: title});
+            } else {
+                $window.plugins.ProgressView.show(title, type, theme);    
+            }
+        },
+        hide: function(){
+            if (!$window.plugins) {
+                $ionicLoading.hide();
+            } else {
+                $window.plugins.ProgressView.hide();  
+            }
+        }
+    }
+})
+.controller('ResultadoBusca', function($scope, $stateParams, $nativeSpinner, $ionicPlatform, $timeout) {
+
+    $ionicPlatform.ready(function() {
+        $nativeSpinner.show('Carregando, aguarde...');
+    });
+    $timeout(function(){
+        $nativeSpinner.hide();
+    }, 4000);
+    // $cordovaSpinnerDialog.show("", "Carregando, aguarde...", true);
+
+    $timeout(function(){
+        // $cordovaSpinnerDialog.hide();
+    }, 4000);
+
     $scope.jogos = [
         {
             name: 'Grand Theaft Auto V',
