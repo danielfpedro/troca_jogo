@@ -1,0 +1,42 @@
+<ion-view view-title="Perfil">
+    <ion-content class="">
+    	<div style="height: 90px; background-color: #3498db;"></div>
+    	<div class="row">
+    		<div class="col col-25" style="margin-top: -30px;">
+    			<div style="background-image: url(img/avatar.jpg); background-position: center center; background-size: cover; width: 100%; height: 80px; border: 3px solid #FFF; border-radius: 6px;"></div>
+    		</div>
+    		<div class="col text-left">
+    			<span style="font-weight: bold; font-size: 18px;">David Beckham</span>
+    		</div>
+    	</div>
+
+		<ion-list style="margin-top: 50px;">
+			<ion-item class="item-divider">
+				Avaliações
+			</ion-item>
+			<ion-checkbox class="" ng-model="filter.positive">
+				<span class="icon ion-arrow-graph-up-right"></span>
+				Positivas
+				<span class="badge badge-balanced">321</span>
+			</ion-checkbox>
+			<ion-checkbox class="" ng-model="filter.negative">
+				<span class="icon ion-arrow-graph-down-right"></span> Negativas
+				<span class="badge badge-assertive">3</span>
+			</ion-checkbox>
+
+	        <div class="list card" ng-repeat="item in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+	            <div class="item item-avatar" ui-sref="app.perfil">
+	                <img src="img/avatar2.jpg">
+	                <h2>Zinedine Zidane</h2>
+	                <p>4 semanas atrás</p>
+	            </div>
+	            <div class="item item-text-wrap">
+	            	<h3>GTA V x Forza 6</h3>
+	                Me bateu e saiu correndo, nunca mais.
+	            </div>
+	        </div>
+			
+		</ion-list>
+		
+    </ion-content>
+</ion-view>

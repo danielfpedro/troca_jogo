@@ -1,0 +1,43 @@
+<ion-view view-title="Meu jogo">
+
+	<ion-nav-buttons side="right">
+		<button class="button button-clear icon ion-trash-b"></button>
+	</ion-nav-buttons>
+
+    <ion-content class="">
+
+	<div class="padding">
+		<div class="row">
+			<div class="col col-33">
+				<img src="img/gta_v_cover.jpg" style="width: 100%">
+			</div>
+			<div class="col">
+				<h3>GTA V</h3>	
+				<p>
+					Jogo sem o mapa mas o resto está tudo ok.
+				</p>	
+				<div class="text-right">
+					<button class="button button-stable button-small icon ion-edit"> Editar texto</button>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+    <ion-list>
+    	<ion-item class="item-divider">
+    		Interesses
+    	</ion-item>
+        <ion-item ng-repeat="game in games" on-hold="onHold()">
+            {{game.name}}
+            <span class="badge badge-balanced">xone</span>
+        </ion-item>
+    	<div class="padding text-center">
+	    	<a ui-sref="app.add-interesse" class="button button-assertive button-small button-block">
+	    		Adicionar interesse
+	    	</a>
+    	</div>
+    </ion-list>
+
+    </ion-content>
+</ion-view>

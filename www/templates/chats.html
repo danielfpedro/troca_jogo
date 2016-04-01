@@ -1,0 +1,12 @@
+<ion-view view-title="Chats">
+    <ion-content class="">
+		<ion-list>
+			<ion-item ng-repeat="chat in chats" class="item-avatar" ui-sref="app.chat">
+		    	<img src="img/avatar.jpg">
+		    	<h2>{{chat.name}}</h2>
+		    	<p><strong>Ofereceu</strong>: {{chat.hisGame.name}}</p>
+		    	<p><strong>Em</strong>: {{chat.yourGame.name}}</p>
+			</ion-item>
+		</ion-list>
+    </ion-content>
+</ion-view>

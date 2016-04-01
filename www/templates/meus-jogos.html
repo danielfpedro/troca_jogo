@@ -1,0 +1,25 @@
+<ion-view view-title="Meus Jogos">
+    <ion-nav-buttons side="right">
+        <button ui-sref="app.add-jogo" class="button button-positive button-clear icon ion-android-add"></button>
+    </ion-nav-buttons>
+    <ion-content class="">
+
+        <ion-list>
+            <div class="item" style="padding: 0px;" ng-repeat="game in games" ui-sref="app.meu-jogo">
+                <div class="row" style="">
+                    <div class="col col-20" style="">
+                        <img src="img/gta_v_cover.jpg" style="width: 100%!important;">
+                    </div>
+                    <div class="col">
+                        <div style="font-size: 19px;">{{game.name}}</div>
+                        xone
+                        <div class="item-text-wrap" style="font-size: 13px;">
+                            Forza 6, FIFA 16, e Need For Speed
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-list>
+
+    </ion-content>
+</ion-view>
